@@ -13,7 +13,7 @@
         </Grid.RowDefinitions>
 
         <Border Style="{StaticResource CustomScreen}" Margin="10,10,10,0">
-            <TextBlock x:Name="InputScreen" Text="" TextAlignment="Right" HorizontalAlignment="Stretch" VerticalAlignment="Top" FontSize="32" Margin="5">INPUT</TextBlock>
+            <TextBlock x:Name="InputScreen" Text="" TextAlignment="Right" HorizontalAlignment="Stretch" VerticalAlignment="Top" FontSize="32" Margin="5">input</TextBlock>
         </Border>
 
         <Grid Name="KeyboardEntry" Grid.Row="1" Margin="5">
