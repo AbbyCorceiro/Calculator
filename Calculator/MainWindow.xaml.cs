@@ -24,5 +24,81 @@ namespace Calculator
         {
             InitializeComponent();
         }
+
+        public string operation = "";
+        public double num1 = 0;
+        public double num2 = 0;
+        public double res;
+        private void Number_Click(object sender, RoutedEventArgs e)
+        {
+            if(InputScreen.Text == operation) InputScreen.Clear();
+            Button b = (Button)sender;
+            InputScreen.Text += b.Content.ToString();
+            num2 = double.Parse(InputScreen.Text);
+        }
+
+        private void MathOp_Click(object sender, RoutedEventArgs e)
+        {
+            Button b = (Button)sender;
+            num2 = double.Parse(InputScreen.Text);
+            operation = b.Content.ToString();
+            CheckOperation();
+        }
+
+        private void Equals_Click(object sender, RoutedEventArgs e)
+        {
+            num2 = double.Parse(InputScreen.Text);
+
+            switch (operation) 
+            {
+                case "+":
+                    res = num1 + num2;
+                    operation = "";
+                    break;
+                case "-":
+                    res = num1 - num2;
+                    operation = "";
+                    break;
+                case "*":
+                    res = num1 * num2;
+                    operation = "";
+                    break;
+                case "/":
+                    res = num1 / num2;
+                    operation = "";
+                    break;
+                default:
+                    break;
+            }
+            if (operation == "") InputScreen.Clear();
+            InputScreen.Text = res.ToString();
+        }
+
+        private void CheckOperation() 
+        {
+            switch (operation) 
+            {
+                case "+":
+                    num1 = double.Parse(InputScreen.Text);
+                    InputScreen.Text = operation;
+                    break;
+                case "-":
+                    res = num1 - num2;
+                    InputScreen.Text = res.ToString();
+                    break;
+                case "x":
+                    res = num1 * num2;
+                    InputScreen.Text = res.ToString();
+                    break;
+                case "/":
+                    res = num1 / num2;
+                    InputScreen.Text = res.ToString();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        
     }
 }

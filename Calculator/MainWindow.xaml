@@ -12,11 +12,9 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Border Style="{StaticResource CustomScreen}" Margin="10,10,10,0">
-            <TextBlock x:Name="InputScreen" Text="" TextAlignment="Right" HorizontalAlignment="Stretch" VerticalAlignment="Top" FontSize="32" Margin="5">input</TextBlock>
-        </Border>
+        <TextBox x:Name="InputScreen" Grid.Row="0" Text="" TextAlignment="Right" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="32" Margin="10" Background="WhiteSmoke" BorderBrush="LightGray" BorderThickness="4"></TextBox>
 
-        <Grid Name="KeyboardEntry" Grid.Row="1" Margin="5">
+            <Grid Name="KeyboardEntry" Grid.Row="1" Margin="5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
@@ -30,31 +28,33 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-
+            
+            <!--Operation Buttons:-->
             <Button Content="%" Grid.Column="0" Grid.Row="0" Style="{StaticResource CustomButton}" Margin="5"></Button>
             <Button Content="CE" Grid.Column="1" Grid.Row="0" Style="{StaticResource CustomButton}" Margin="5"></Button>
             <Button Content="C" Grid.Column="2" Grid.Row="0" Style="{StaticResource CustomButton}" Margin="5"></Button>
             <Button Content="DEL" Grid.Column="3" Grid.Row="0" Style="{StaticResource CustomButton}" Margin="5"></Button>
-
-            <Button Content="7" Grid.Column="0" Grid.Row="1" Style="{StaticResource CustomButton}" Margin="5"></Button>
-            <Button Content="8" Grid.Column="1" Grid.Row="1" Style="{StaticResource CustomButton}" Margin="5"></Button>
-            <Button Content="9" Grid.Column="2" Grid.Row="1" Style="{StaticResource CustomButton}" Margin="5"></Button>
-            <Button Content="÷" Grid.Column="3" Grid.Row="1" Style="{StaticResource CustomButton}" Margin="5"></Button>
             
-            <Button Content="4" Grid.Column="0" Grid.Row="2" Style="{StaticResource CustomButton}" Margin="5"></Button>
-            <Button Content="5" Grid.Column="1" Grid.Row="2" Style="{StaticResource CustomButton}" Margin="5"></Button>
-            <Button Content="6" Grid.Column="2" Grid.Row="2" Style="{StaticResource CustomButton}" Margin="5"></Button>
-            <Button Content="x" Grid.Column="3" Grid.Row="2" Style="{StaticResource CustomButton}" Margin="5"></Button>
+            <!--Number Buttons:-->
+            <Button Content="0" Grid.Column="1" Grid.Row="4" Style="{StaticResource CustomButton}" Margin="5" Click="Number_Click"></Button>
+            <Button Content="1" Grid.Column="0" Grid.Row="3" Style="{StaticResource CustomButton}" Margin="5" Click="Number_Click"></Button>
+            <Button Content="2" Grid.Column="1" Grid.Row="3" Style="{StaticResource CustomButton}" Margin="5" Click="Number_Click"></Button>
+            <Button Content="3" Grid.Column="2" Grid.Row="3" Style="{StaticResource CustomButton}" Margin="5" Click="Number_Click"></Button>
+            <Button Content="4" Grid.Column="0" Grid.Row="2" Style="{StaticResource CustomButton}" Margin="5" Click="Number_Click"></Button>
+            <Button Content="5" Grid.Column="1" Grid.Row="2" Style="{StaticResource CustomButton}" Margin="5" Click="Number_Click"></Button>
+            <Button Content="6" Grid.Column="2" Grid.Row="2" Style="{StaticResource CustomButton}" Margin="5" Click="Number_Click"></Button>
+            <Button Content="7" Grid.Column="0" Grid.Row="1" Style="{StaticResource CustomButton}" Margin="5" Click="Number_Click"></Button>
+            <Button Content="8" Grid.Column="1" Grid.Row="1" Style="{StaticResource CustomButton}" Margin="5" Click="Number_Click"></Button>
+            <Button Content="9" Grid.Column="2" Grid.Row="1" Style="{StaticResource CustomButton}" Margin="5" Click="Number_Click"></Button>
 
-            <Button Content="1" Grid.Column="0" Grid.Row="3" Style="{StaticResource CustomButton}" Margin="5"></Button>
-            <Button Content="2" Grid.Column="1" Grid.Row="3" Style="{StaticResource CustomButton}" Margin="5"></Button>
-            <Button Content="3" Grid.Column="2" Grid.Row="3" Style="{StaticResource CustomButton}" Margin="5"></Button>
+            <!--Math Operation Buttons:-->
+            <Button Content="+" Grid.Column="3" Grid.Row="4" Style="{StaticResource CustomButton}" Margin="5" Click="MathOp_Click"></Button>
             <Button Content="-" Grid.Column="3" Grid.Row="3" Style="{StaticResource CustomButton}" Margin="5"></Button>
-
+            <Button Content="x" Grid.Column="3" Grid.Row="2" Style="{StaticResource CustomButton}" Margin="5"></Button>
+            <Button Content="/" Grid.Column="3" Grid.Row="1" Style="{StaticResource CustomButton}" Margin="5"></Button>
+            
+            <Button Content="=" Grid.Column="2" Grid.Row="4" Style="{StaticResource CustomButton}" Margin="5" Click="Equals_Click"></Button>
             <Button Content="." Grid.Column="0" Grid.Row="4" Style="{StaticResource CustomButton}" Margin="5"></Button>
-            <Button Content="0" Grid.Column="1" Grid.Row="4" Style="{StaticResource CustomButton}" Margin="5"></Button>
-            <Button Content="=" Grid.Column="2" Grid.Row="4" Style="{StaticResource CustomButton}" Margin="5"></Button>
-            <Button Content="+" Grid.Column="3" Grid.Row="4" Style="{StaticResource CustomButton}" Margin="5"></Button>
         </Grid>
     </Grid>
 </Window>

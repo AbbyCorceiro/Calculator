@@ -20,11 +20,4 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-
-    <Style TargetType="Border" x:Key="CustomScreen">
-        <Setter Property="Background" Value="WhiteSmoke"></Setter>
-        <Setter Property="BorderBrush" Value="LightGray"></Setter>
-        <Setter Property="BorderThickness" Value="3"></Setter>
-        <Setter Property="CornerRadius" Value="10"></Setter>
-    </Style>
 </ResourceDictionary>
