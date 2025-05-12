@@ -15,3 +15,16 @@
     <li>Multiplication</li>
 </ul>
 
+## Currently NOT Working:
+<ul>
+  <li>Button: %</li>
+  <li>Button:C</li>
+  <li>Button: CE</li>
+  <li>Button: DEL</li>
+  <li>Button: .</li>
+
+  <li>Button: -</li>
+  <li>Button: /</li>
+  <li>Button: *</li>
+</ul>
+
