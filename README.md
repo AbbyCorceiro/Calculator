@@ -5,7 +5,13 @@
 ## Available Operations
   <ul>
     <li>Addition</li>
+  </ul>
+
+## What's Next:
+<h5>Next Operations to do: </h5>
+<ul>
     <li>Substraction</li>
     <li>Division</li>
     <li>Multiplication</li>
-  </ul>
+</ul>
+
