@@ -20,4 +20,10 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+    <Style TargetType="TextBox" x:Key="CustomBox">
+        <Setter Property="BorderBrush" Value="LightGray"></Setter>
+        <Setter Property="BorderThickness" Value="4"></Setter>
+        <Setter Property="Background" Value="WhiteSmoke"></Setter>
+        <Setter Property="FontSize" Value="32"></Setter>
+    </Style>
 </ResourceDictionary>

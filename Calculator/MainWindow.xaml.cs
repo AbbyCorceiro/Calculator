@@ -48,8 +48,39 @@ namespace Calculator
         private void Equals_Click(object sender, RoutedEventArgs e)
         {
             num2 = double.Parse(InputScreen.Text);
+            Calc();
+            if (operation == "") InputScreen.Clear();
+            InputScreen.Text = res.ToString();
+        }
 
+        private void CheckOperation() 
+        {
             switch (operation) 
+            {
+                case "+":
+                    num1 = double.Parse(InputScreen.Text);
+                    InputScreen.Text = operation;
+                    break;
+                case "-":
+                    num1 = double.Parse(InputScreen.Text);
+                    InputScreen.Text = operation;
+                    break;
+                case "*":
+                    num1 = double.Parse(InputScreen.Text);
+                    InputScreen.Text = operation;
+                    break;
+                case "/":
+                    num1 = double.Parse(InputScreen.Text);
+                    InputScreen.Text = operation;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void Calc() 
+        {
+            switch (operation)
             {
                 case "+":
                     res = num1 + num2;
@@ -70,35 +101,6 @@ namespace Calculator
                 default:
                     break;
             }
-            if (operation == "") InputScreen.Clear();
-            InputScreen.Text = res.ToString();
-        }
-
-        private void CheckOperation() 
-        {
-            switch (operation) 
-            {
-                case "+":
-                    num1 = double.Parse(InputScreen.Text);
-                    InputScreen.Text = operation;
-                    break;
-                case "-":
-                    res = num1 - num2;
-                    InputScreen.Text = res.ToString();
-                    break;
-                case "x":
-                    res = num1 * num2;
-                    InputScreen.Text = res.ToString();
-                    break;
-                case "/":
-                    res = num1 / num2;
-                    InputScreen.Text = res.ToString();
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        
+        } 
     }
 }
