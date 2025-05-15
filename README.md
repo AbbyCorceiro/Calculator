@@ -5,15 +5,84 @@
     <img src= "https://github.com/user-attachments/assets/4cec0a5b-6a78-459d-b968-dce052dc55cf" alt = "Calculator Interface" width = "200"/>
   </p>
 
-## Available Operations
+## Basic Operations
+<p>This calculator is capable of all four basic calculation types(Addition, Substraction, Division, Multiplication), and the calculation of the percentage of a number. </p>
   <ul>
-    <li>Addition</li>
-    <li>Substraction</li>
-    <li>Division</li>
-    <li>Multiplication</li>
-    <li>Percentage</li>
+  <li>Addition 
+      
+   ```   
+      res = num1 + num2;
+   ```
+  </li>
+  <li>Substraction
+    
+   ```   
+      res = num1 - num2;
+   ```
+  </li>
+  <li>Division
+      
+   ```   
+      if (num2 == 0) //Checking the second number for division by 0
+      {
+         res = num1; //If divide by 0, then result will be equals to num1
+      }
+      else 
+      {
+         res = num1 / num2;
+      }
+   ```
+  </li>
+  <li>Multiplication
+      
+   ```   
+      res = num1 * num2;
+   ```
+  </li>
+  <li>Percentage
+    
+  ```   
+      res = (num1 * num2) / 100;
+  ```
+  </li>
   </ul>
+<p>The whole calculation check has a switch case based on the mathematical operation button that triggers the click event, so depending on each case scenario, the program will return the corresponding result of the operation</p>
 
+```
+switch (operation)
+    {
+        case "+":
+            res = num1 + num2;
+            operation = ""; //The operation is empty after the calculation is done.
+            break;
+        case "-":
+            res = num1 - num2;
+            operation = "";
+            break;
+        case "*":
+            res = num1 * num2;
+            operation = "";
+            break;
+        case "/":
+            if (num2 == 0) 
+            {
+                res = num1; 
+                operation = "";
+            }
+            else 
+            {
+                res = num1 / num2;
+                operation = "";
+            }
+            break;
+        case "%":
+            res = (num1 * num2) / 100;
+            operation = "";
+            break;
+        default:
+            break;
+    }
+```
 ## Documentation:
 <h5>About the calculator</h5>
 <ul>
