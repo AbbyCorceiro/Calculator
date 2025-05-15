@@ -13,14 +13,21 @@
 ## What's Next:
 <h5>Next to do: </h5>
 <ul>
-    <li>Fix division by 0</li>
-    <li>Handle exceptions (overflow)</li>
+    <li> - [x] Add basic operations</li>
+    <li>
+      - [x] Fix division by 0
+      <ul>
+        <li>The second number value will be the same to the first one in case the second number equals 0. This was made in this way beacause otherwise the result will be infinite, wich is mathematically imposible</li>
+      </ul>
+    </li>
+    <li> - [ ] Handle exceptions</li>
+    <li> - [ ] Make the remaining buttons work</li>
 </ul>
 
 ## Currently NOT Working:
 <ul>
   <li>Button: %</li>
-  <li>Button:C</li>
+  <li>Button: C</li>
   <li>Button: CE</li>
   <li>Button: DEL</li>
   <li>Button: .</li>
