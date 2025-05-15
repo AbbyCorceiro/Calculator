@@ -30,7 +30,7 @@
             </Grid.RowDefinitions>
             
             <!--Operation Buttons:-->
-            <Button Content="%" Grid.Column="0" Grid.Row="0" Style="{StaticResource CustomButton}" Margin="5"></Button>
+            <Button Content="%" Grid.Column="0" Grid.Row="0" Style="{StaticResource CustomButton}" Margin="5" Click="MathOp_Click"></Button>
             <Button Content="CE" Grid.Column="1" Grid.Row="0" Style="{StaticResource CustomButton}" Margin="5"></Button>
             <Button Content="C" Grid.Column="2" Grid.Row="0" Style="{StaticResource CustomButton}" Margin="5"></Button>
             <Button Content="DEL" Grid.Column="3" Grid.Row="0" Style="{StaticResource CustomButton}" Margin="5"></Button>
@@ -54,7 +54,7 @@
             <Button Content="/" Grid.Column="3" Grid.Row="1" Style="{StaticResource CustomButton}" Margin="5" Click="MathOp_Click"></Button>
             
             <Button Content="=" Grid.Column="2" Grid.Row="4" Style="{StaticResource CustomButton}" Margin="5" Click="Equals_Click"></Button>
-            <Button Content="." Grid.Column="0" Grid.Row="4" Style="{StaticResource CustomButton}" Margin="5"></Button>
+            <Button Content="." Grid.Column="0" Grid.Row="4" Style="{StaticResource CustomButton}" Margin="5" Click="Point_Click"></Button>
         </Grid>
     </Grid>
 </Window>

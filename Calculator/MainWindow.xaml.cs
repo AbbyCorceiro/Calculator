@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace Calculator
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -33,7 +30,7 @@ namespace Calculator
         {
             if(InputScreen.Text == operation) InputScreen.Clear();
             Button b = (Button)sender;
-            InputScreen.Text += b.Content.ToString();
+            InputScreen.Text += b.Content.ToString();     
             num2 = double.Parse(InputScreen.Text);
         }
 
@@ -42,6 +39,7 @@ namespace Calculator
             Button b = (Button)sender;
             num2 = double.Parse(InputScreen.Text);
             operation = b.Content.ToString();
+            num1 = double.Parse(InputScreen.Text);
             CheckOperation();
         }
 
@@ -58,19 +56,18 @@ namespace Calculator
             switch (operation) 
             {
                 case "+":
-                    num1 = double.Parse(InputScreen.Text);
                     InputScreen.Text = operation;
                     break;
                 case "-":
-                    num1 = double.Parse(InputScreen.Text);
                     InputScreen.Text = operation;
                     break;
                 case "*":
-                    num1 = double.Parse(InputScreen.Text);
                     InputScreen.Text = operation;
                     break;
                 case "/":
-                    num1 = double.Parse(InputScreen.Text);
+                    InputScreen.Text = operation;
+                    break;
+                case "%":
                     InputScreen.Text = operation;
                     break;
                 default:
@@ -106,9 +103,25 @@ namespace Calculator
                         operation = "";
                     }
                     break;
+                case "%":
+                    res = (num1 * num2) / 100;
+                    operation = "";
+                    break;
                 default:
                     break;
             }
-        } 
+        }
+
+        private void Point_Click(object sender, RoutedEventArgs e)
+        {
+            //This condition checks if the text is not null, while the text do not contain a decimal point
+            //already and if the text itself ends with a decimal point, so the calculator will not allow the user
+            //to add another decimal point in the same number value.
+            if (InputScreen.Text != "" && InputScreen.Text.EndsWith(".") == false && InputScreen.Text.Contains(".") == false) 
+            { 
+                InputScreen.AppendText("."); 
+            }
+            else return;
+        }
     }
 }
