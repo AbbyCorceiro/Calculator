@@ -1,6 +1,7 @@
 # Calculator
 ## Description
   <p>A simple WPF Calculator Application made in Visual Studio with the graphic interface made in XAML code</p>
+  ![Screenshot 2025-05-14 220032.png](https://github.com/user-attachments/assets/4cec0a5b-6a78-459d-b968-dce052dc55cf)
 
 ## Available Operations
   <ul>
