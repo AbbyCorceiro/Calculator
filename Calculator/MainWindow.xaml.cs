@@ -26,8 +26,8 @@ namespace Calculator
         }
 
         public string operation = "";
-        public double num1 = 0;
-        public double num2 = 0;
+        public double num1;
+        public double num2;
         public double res;
         private void Number_Click(object sender, RoutedEventArgs e)
         {
@@ -95,8 +95,16 @@ namespace Calculator
                     operation = "";
                     break;
                 case "/":
-                    res = num1 / num2;
-                    operation = "";
+                    if (num2 == 0) //Checking the second number for division by 0
+                    {
+                        res = num1; //If divide by 0, then result will be equals to num1
+                        operation = "";
+                    }
+                    else 
+                    {
+                        res = num1 / num2;
+                        operation = "";
+                    }
                     break;
                 default:
                     break;
