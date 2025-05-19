@@ -83,6 +83,12 @@ switch (operation)
             break;
     }
 ```
+## Currently Added:
+<ul>
+  <li>Added a second textbox  that shows the current operation</li>
+  <li>Added Clear button. Tried to add the "Clear Entry" and "Delete" buttons but are not working yet!</li>
+</ul>
+
 ## Documentation:
 <h5>About the calculator</h5>
 <ul>
@@ -116,13 +122,13 @@ switch (operation)
       <ul>
         <li>- [x] Added percentage button</li>
         <li>- [x] Added decimal point button</li>
+        <li>- [x] Added Clear button</li>
       </ul>
     </li>
 </ul>
 
 ## Currently NOT Working:
 <ul>
-  <li>Button: C</li>
   <li>Button: CE</li>
   <li>Button: DEL</li>
 </ul>
