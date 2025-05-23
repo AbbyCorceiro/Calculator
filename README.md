@@ -117,6 +117,7 @@ switch (operation)
       </ul>
     </li>
     <li> - [ ] Handle exceptions</li>
+    <li> - [ ] Fix incorrect result based on decimal operations</li>
     <li>
       - [ ] Make the remaining buttons work
       <ul>
