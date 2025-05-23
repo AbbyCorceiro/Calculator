@@ -31,47 +31,25 @@ namespace Calculator
         {
             Button b = (Button)sender;
             if (InputScreen.Text == operation) InputScreen.Clear();
-            if (OpScreen.Text.Contains("=") == true) 
-            { 
-                OpScreen.Clear(); 
-                InputScreen.Clear(); 
-            }
             if (InputScreen.Text == "0") InputScreen.Text = b.Content.ToString();
             else InputScreen.Text += b.Content.ToString();
-            if (operation == "") num1 = double.Parse(InputScreen.Text);
+            if (operation == "") num1 = double.Parse(InputScreen.Text); 
             else num2 = double.Parse(InputScreen.Text);
-               
-            OpScreen.Text += b.Content.ToString();
         }
 
         private void MathOp_Click(object sender, RoutedEventArgs e)
         {
             Button b = (Button)sender;
-            if(OpScreen.Text.Contains("=")) OpScreen.Text = res.ToString();
             operation = b.Content.ToString();
             CheckOperation();   
         }
 
         private void Equals_Click(object sender, RoutedEventArgs e)
         {
-            if (OpScreen.Text.Contains("=") || OpScreen.Text == res.ToString())
-            {
-                OpScreen.Clear() ;
-                OpScreen.Text = res.ToString();
-            }
-            else
-            {
-                if (OpScreen.Text.EndsWith(operation) == false)
-                {
-                    num2 = double.Parse(InputScreen.Text);
-                    Calc();
-                    if (operation == "") InputScreen.Clear();
-                    OpScreen.AppendText("=");
-                    InputScreen.Text = res.ToString();
-                    OpScreen.Text += InputScreen.Text;
-                }
-                else res = num1;
-            }
+            num2 = double.Parse(InputScreen.Text);
+            Calc();
+            if (operation == "") InputScreen.Clear();
+            InputScreen.Text = res.ToString();  
         }
 
         private void Point_Click(object sender, RoutedEventArgs e)
@@ -82,7 +60,6 @@ namespace Calculator
             if (InputScreen.Text != "" && InputScreen.Text.EndsWith(".") == false && InputScreen.Text.Contains(".") == false)
             {
                 InputScreen.AppendText(".");
-                OpScreen.AppendText(".");
             }
             else return;
         }
@@ -93,16 +70,41 @@ namespace Calculator
 
             switch (b.Content.ToString()) 
             {
-                case "C": //OK
+                case "C": //Resets every value, and the screen text
                     num1 = 0;
                     num2 = 0;
                     operation = "";
-                    InputScreen.Clear();
                     OpScreen.Clear();
+                    InputScreen.Clear();
                     break;
-                case "CE": 
+                case "CE": //Resets the last value entry
+                    if (operation == "") num1 = 0;
+                    else num2 = 0;
+                    InputScreen.Clear();
                     break;
-                case "DEL":  
+                case "DEL": //Deletes the last character input unless the last value is the operation's result
+                    try
+                    {
+                        InputScreen.Undo();
+                        if (operation == "")
+                        {
+                            num1 = double.Parse(InputScreen.Text);
+                            InputScreen.Text = num1.ToString();
+                        }
+                        else
+                        {
+                            num2 = double.Parse(InputScreen.Text);
+                            InputScreen.Text = num2.ToString();
+                        }
+                    }
+                    catch 
+                    { 
+                        InputScreen.Clear();
+                        OpScreen.Clear();
+                        num1 = 0;
+                        num2 = 0;
+                        operation = "";
+                    }
                     break;
                 default:
                     break;
@@ -130,7 +132,6 @@ namespace Calculator
                 default:
                     break;
             }
-            OpScreen.Text += InputScreen.Text;
         }
 
         private void Calc() 
@@ -139,37 +140,27 @@ namespace Calculator
             {
                 case "+":
                     res = num1 + num2;
-                    operation = "";
                     break;
                 case "-":
                     res = num1 - num2;
-                    operation = "";
                     break;
                 case "*":
                     res = num1 * num2;
-                    operation = "";
                     break;
                 case "/":
-                    if (num2 == 0) //Checking the second number for division by 0
-                    {
-                        res = num1; //If divide by 0, then result will be equals to num1
-                        operation = "";
-                    }
-                    else 
-                    {
-                        res = num1 / num2;
-                        operation = "";
-                    }
+                    //Checking the second number for division by 0
+                    if (num2 == 0) res = num1; //If divide by 0, then result will be equals to num1
+                    else res = num1 / num2;
                     break;
                 case "%":
                     res = (num1 * num2) / 100;
-                    operation = "";
                     break;
                 default:
                     break;
             }
+            OpScreen.Text = res.ToString();
             num1 = res;
-            InputScreen.Text = num1.ToString();
+            operation = "";
         }
     }
 }
