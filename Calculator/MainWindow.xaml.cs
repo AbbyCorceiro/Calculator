@@ -151,6 +151,7 @@ namespace Calculator
                     //Checking the second number for division by 0
                     if (num2 == 0) res = num1; //If divide by 0, then result will be equals to num1
                     else res = num1 / num2;
+                    res = Math.Round(res,2); //Shows inly two digits on a decimal number
                     break;
                 case "%":
                     res = (num1 * num2) / 100;
