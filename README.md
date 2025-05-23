@@ -102,8 +102,7 @@ switch (operation)
         <li>The second number value will be the same to the first one in case the second number equals 0. This was made in this way beacause otherwise the result will be infinite, wich is mathematically imposible</li>
       </ul>
     </li>
-    <li> - [ ] Handle exceptions</li>
-    <li> - [ ] Fix incorrect result based on decimal operations</li>
+    <li> - [x] Handle exceptions</li>
     <li>
       - [x] Make the remaining buttons work
       <ul>
