@@ -22,15 +22,11 @@
   </li>
   <li>Division
       
-   ```   
-      if (num2 == 0) //Checking the second number for division by 0
-      {
-         res = num1; //If divide by 0, then result will be equals to num1
-      }
-      else 
-      {
-         res = num1 / num2;
-      }
+   ```
+      //Checking the second number for division by 0  
+      if (num2 == 0) res = num1; //If divide by 0, then result will be equals to num1
+      else res = num1 / num2;
+
    ```
   </li>
   <li>Multiplication
@@ -53,40 +49,30 @@ switch (operation)
     {
         case "+":
             res = num1 + num2;
-            operation = ""; //The operation is empty after the calculation is done.
             break;
         case "-":
             res = num1 - num2;
-            operation = "";
             break;
         case "*":
             res = num1 * num2;
-            operation = "";
             break;
         case "/":
-            if (num2 == 0) 
-            {
-                res = num1; 
-                operation = "";
-            }
-            else 
-            {
-                res = num1 / num2;
-                operation = "";
-            }
+            if (num2 == 0) res = num1; 
+            else res = num1 / num2;
             break;
         case "%":
             res = (num1 * num2) / 100;
-            operation = "";
             break;
         default:
             break;
     }
+    num1 = res; 
+    operation = ""; //The operation is empty after the calculation is done.
 ```
 ## Currently Added:
 <ul>
-  <li>Added a second textbox  that shows the current operation</li>
-  <li>Added Clear button. Tried to add the "Clear Entry" and "Delete" buttons but are not working yet!</li>
+  <li>Added a second textbox  that shows the operation's result</li>
+  <li>Added Clear button, Clear Entry button and DEL button (delete or backspace)</li>
 </ul>
 
 ## Documentation:
@@ -119,18 +105,15 @@ switch (operation)
     <li> - [ ] Handle exceptions</li>
     <li> - [ ] Fix incorrect result based on decimal operations</li>
     <li>
-      - [ ] Make the remaining buttons work
+      - [x] Make the remaining buttons work
       <ul>
         <li>- [x] Added percentage button</li>
         <li>- [x] Added decimal point button</li>
         <li>- [x] Added Clear button</li>
+        <li>- [x] Added Clear Entry button</li>
+        <li>- [x] Added Delete button</li>
       </ul>
     </li>
 </ul>
 
-## Currently NOT Working:
-<ul>
-  <li>Button: CE</li>
-  <li>Button: DEL</li>
-</ul>
 
