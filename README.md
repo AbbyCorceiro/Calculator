@@ -2,7 +2,7 @@
 ## Description
   <p align="center">A simple WPF Calculator Application made in Visual Studio with the graphic interface made in XAML code</p>
   <p align="center">
-    <img src= "https://github.com/user-attachments/assets/4cec0a5b-6a78-459d-b968-dce052dc55cf" alt = "Calculator Interface" width = "200"/>
+    <img src= "https://github.com/user-attachments/assets/4cec0a5b-6a78-459d-b968-dce052dc55cf" alt = "Calculator Interface" width = "400"/>
   </p>
 
 ## Basic Operations
