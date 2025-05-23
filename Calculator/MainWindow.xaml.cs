@@ -27,7 +27,7 @@ namespace Calculator
         public double num1;
         public double num2;
         public double res;
-        private void Number_Click(object sender, RoutedEventArgs e)
+        private void Number_Click(object sender, RoutedEventArgs e) //OK
         {
             Button b = (Button)sender;
             if (InputScreen.Text == operation) InputScreen.Clear();
@@ -38,7 +38,9 @@ namespace Calculator
             }
             if (InputScreen.Text == "0") InputScreen.Text = b.Content.ToString();
             else InputScreen.Text += b.Content.ToString();
-            num2 = double.Parse(InputScreen.Text);
+            if (operation == "") num1 = double.Parse(InputScreen.Text);
+            else num2 = double.Parse(InputScreen.Text);
+               
             OpScreen.Text += b.Content.ToString();
         }
 
@@ -46,10 +48,8 @@ namespace Calculator
         {
             Button b = (Button)sender;
             if(OpScreen.Text.Contains("=")) OpScreen.Text = res.ToString();
-            num2 = double.Parse(InputScreen.Text);
             operation = b.Content.ToString();
-            num1 = double.Parse(InputScreen.Text);
-            CheckOperation();
+            CheckOperation();   
         }
 
         private void Equals_Click(object sender, RoutedEventArgs e)
@@ -60,13 +60,17 @@ namespace Calculator
                 OpScreen.Text = res.ToString();
             }
             else
-            { 
-                num2 = double.Parse(InputScreen.Text);
-                Calc();
-                if (operation == "") InputScreen.Clear();
-                OpScreen.AppendText("=");
-                InputScreen.Text = res.ToString();
-                OpScreen.Text += InputScreen.Text;
+            {
+                if (OpScreen.Text.EndsWith(operation) == false)
+                {
+                    num2 = double.Parse(InputScreen.Text);
+                    Calc();
+                    if (operation == "") InputScreen.Clear();
+                    OpScreen.AppendText("=");
+                    InputScreen.Text = res.ToString();
+                    OpScreen.Text += InputScreen.Text;
+                }
+                else res = num1;
             }
         }
 
@@ -78,6 +82,7 @@ namespace Calculator
             if (InputScreen.Text != "" && InputScreen.Text.EndsWith(".") == false && InputScreen.Text.Contains(".") == false)
             {
                 InputScreen.AppendText(".");
+                OpScreen.AppendText(".");
             }
             else return;
         }
@@ -88,25 +93,17 @@ namespace Calculator
 
             switch (b.Content.ToString()) 
             {
-                case "C":
+                case "C": //OK
                     num1 = 0;
                     num2 = 0;
                     operation = "";
                     InputScreen.Clear();
                     OpScreen.Clear();
                     break;
-                case "CE": //No funciona  <---
-                    if (operation == "") num1 = 0;
-                    else num2 = 0;
-                    InputScreen.Clear();
+                case "CE": 
                     break;
-                case "DEL": //Arreglar que los valores de los numeros se reseteen al usar delete <---
-                    if (InputScreen.Text.EndsWith("=") == false)
-                    {
-                        InputScreen.Undo();
-                        OpScreen.Undo();
-                    }
-                        break;
+                case "DEL":  
+                    break;
                 default:
                     break;
             }

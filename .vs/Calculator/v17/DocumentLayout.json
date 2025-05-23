@@ -11,7 +11,7 @@
       "RelativeMoniker": "D:0:0:{F0C116E8-880D-448C-8177-B646DB8F84A1}|Calculator\\Calculator.csproj|solutionrelative:calculator\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F0C116E8-880D-448C-8177-B646DB8F84A1}|Calculator\\Calculator.csproj|c:\\users\\hu\\documents\\programming projects\\projects\\calculator\\calculator\\customstyle.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{F0C116E8-880D-448C-8177-B646DB8F84A1}|Calculator\\Calculator.csproj|C:\\Users\\Hu\\Documents\\Programming Projects\\Projects\\Calculator\\calculator\\customstyle.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{F0C116E8-880D-448C-8177-B646DB8F84A1}|Calculator\\Calculator.csproj|solutionrelative:calculator\\customstyle.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
@@ -44,7 +44,7 @@
               "RelativeDocumentMoniker": "Calculator\\MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\Hu\\Documents\\Programming Projects\\Projects\\Calculator\\Calculator\\MainWindow.xaml.cs",
               "RelativeToolTip": "Calculator\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGEAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwDMAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-18T13:56:51.299Z",
               "EditorCaption": ""
